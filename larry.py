@@ -3,9 +3,8 @@ import smtplib
 import ssl
 from email.message import EmailMessage
 from telegram import Update
-from telegail.comram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from dotenv import load_dotenv
-
 # Load environment variables from a .env file
 load_dotenv()
 
@@ -50,7 +49,10 @@ async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     It extracts the message content and sender info, then forwards it via email.
     """
     # Get the user's message text
-    user_message = update.message.text
+    if update.message.text:
+        user_message = update.message.text
+    else:
+        user_message = "Message type not supported"
     
     # Get sender information for the email subject
     sender_info = "Unknown User"

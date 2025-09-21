@@ -13,9 +13,9 @@ load_dotenv()
 # SENDER_EMAIL: The email address that will send the messages.
 # SENDER_PASSWORD: The App Password for the sender email (REQUIRED for Gmail).
 # RECEIVER_EMAIL: The email address where the messages will be forwarded.
-SENDER_EMAIL = os.getenv("larry41bot@gmail.com")
-RECEIVER_EMAIL = os.getenv("4141sarthak@gmail.com")
-SENDER_PASSWORD = os.getenv("Larry@123")
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+RECEIVER_EMAIL = os.getenv("RECEIVER_EMAIL")
+SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
 PORT = 465  # Default port for SSL
 
@@ -78,7 +78,7 @@ def main():
     Initializes and starts the Telegram bot.
     """
     # Get the Telegram bot token from environment variables
-    bot_token = os.getenv("8330439933:AAHzca72g_pvaHBZEuhsivp2wkxM2Tg3AWU")
+    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
     if not bot_token:
         print("Error: TELEGRAM_BOT_TOKEN is not set. Please set the environment variable.")
         return

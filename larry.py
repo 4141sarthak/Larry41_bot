@@ -3,7 +3,7 @@ import smtplib
 import ssl
 from email.message import EmailMessage
 from telegram import Update
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+from telegail.comram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from dotenv import load_dotenv
 
 # Load environment variables from a .env file
